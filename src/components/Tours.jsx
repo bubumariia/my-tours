@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Tour from "./Tour";
 
 export default class Tours extends Component {
   constructor(props) {
@@ -6,6 +7,20 @@ export default class Tours extends Component {
     this.state = {};
   }
   render() {
-    return <div></div>;
+    return (
+      <React.Fragment>
+        {this.props.tours.map((tour) => {
+          return (
+            <Tour
+              name={tour.name}
+              key={tour.id}
+              info={tour.info}
+              image={tour.image}
+              price={tour.price}
+            />
+          );
+        })}
+      </React.Fragment>
+    );
   }
 }

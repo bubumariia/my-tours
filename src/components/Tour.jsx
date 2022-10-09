@@ -4,13 +4,13 @@ export default class Tour extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container">
-          <img src="" alt="" />
+        <div className="container" key={this.props.id}>
+          <img src={this.props.image} alt="photo" />
           <div>
-            <h2></h2>
-            <h2></h2>
+            <h2>{this.props.name}</h2>
+            <h2>{this.props.price}</h2>
           </div>
-          <p></p>
+          <p>{this.props.info}</p>
           <button>read more</button>
           <button>not interested</button>
         </div>

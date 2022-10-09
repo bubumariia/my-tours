@@ -16,6 +16,10 @@ export default class App extends Component {
     }
   }
   render() {
-    return <React.Fragment></React.Fragment>;
+    return (
+      <React.Fragment>
+        <Tours tours={this.state.tours}></Tours>
+      </React.Fragment>
+    );
   }
 }
