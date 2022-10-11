@@ -9,10 +9,10 @@ export default class Tour extends Component {
     };
   }
   handleNotInterestedBtn = (event) => {
-    console.log(event.target.parentElement.remove());
+    event.target.parentElement.remove()
   };
   render() {
-    console.log(this.state.updateTours);
+   
     return (
       <React.Fragment>
         <div className="tour" key={this.props.id}>
