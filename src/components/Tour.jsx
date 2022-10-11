@@ -1,18 +1,47 @@
 import React, { Component } from "react";
 
 export default class Tour extends Component {
+  constructor() {
+    super();
+    this.state = {
+      readMoreBtn: false,
+      updateTours: "",
+    };
+  }
+  handleNotInterestedBtn = (event) => {
+    console.log(event.target.parentElement.remove());
+  };
   render() {
+    console.log(this.state.updateTours);
     return (
       <React.Fragment>
-        <div className="container" key={this.props.id}>
+        <div className="tour" key={this.props.id}>
           <img src={this.props.image} alt="photo" />
-          <div>
-            <h2>{this.props.name}</h2>
-            <h2>{this.props.price}</h2>
+          <div className="title">
+            <h3 className="name">{this.props.name}</h3>
+            <h4 className="price">{"$" + this.props.price}</h4>
           </div>
-          <p>{this.props.info}</p>
-          <button>read more</button>
-          <button>not interested</button>
+          <p>
+            {this.state.readMoreBtn
+              ? this.props.info
+              : this.props.info.substring(0, 200) + "..."}
+            <button
+              className="readMore"
+              onClick={() => {
+                this.setState({ readMoreBtn: !this.state.readMoreBtn });
+              }}
+            >
+              {this.state.readMoreBtn ? "Show less" : "Read more"}
+            </button>
+          </p>
+
+          <button
+            className="notInterestedBtn"
+            updatetours={this.state.updateTours}
+            onClick={this.handleNotInterestedBtn}
+          >
+            Not interested
+          </button>
         </div>
       </React.Fragment>
     );
