@@ -4,11 +4,10 @@ import Tour from "./Tour";
 export default class Tours extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      updateIndex: "",
-    };
+    this.state = {};
   }
   render() {
+    console.log(this.state.updateIndex);
     return (
       <React.Fragment>
         <div className="container">
@@ -17,11 +16,6 @@ export default class Tours extends Component {
           {this.props.tours.map((tour, index) => {
             return (
               <Tour
-                updateIndex={() =>
-                  this.setState({
-                    updateIndex: this.props.updatetours,
-                  })
-                }
                 index={index}
                 name={tour.name}
                 key={tour.id}
