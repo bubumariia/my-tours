@@ -9,7 +9,6 @@ export default class Tours extends Component {
     };
   }
   render() {
-    console.log(this.state.updateIndex);
     return (
       <React.Fragment>
         <div className="container">
