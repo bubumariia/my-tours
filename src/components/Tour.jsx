@@ -5,14 +5,13 @@ export default class Tour extends Component {
     super();
     this.state = {
       readMoreBtn: false,
-      updateTours: "",
     };
   }
   handleNotInterestedBtn = (event) => {
-    event.target.parentElement.remove()
+    console.log(event.target.parentElement.remove());
   };
   render() {
-   
+    console.log(this.state.updateTours);
     return (
       <React.Fragment>
         <div className="tour" key={this.props.id}>
@@ -37,7 +36,6 @@ export default class Tour extends Component {
 
           <button
             className="notInterestedBtn"
-            updatetours={this.state.updateTours}
             onClick={this.handleNotInterestedBtn}
           >
             Not interested
